@@ -165,14 +165,14 @@
 }
 
 .generate {
-  width: 476px;
-  height: 65px;
+  width: 311px;
+  height: 56px;
   background-color: #a4ffaf;
   color: #24232c;
   font-size: 18px;
   font-weight: 700;
   border: none;
-  margin-top: 32px;
+  margin-top: 16px;
   line-height: 23.76px;
   cursor: pointer;
 }
@@ -192,7 +192,7 @@ button:hover img {
   margin-left: 16px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .head-title {
     font-size: 24px;
   }
@@ -243,5 +243,7 @@ button:hover img {
   .generate {
     font-size: 18px;
     line-height: 23.76px;
+    width: 476px;
+    height: 65px;
   }
 }
