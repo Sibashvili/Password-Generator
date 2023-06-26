@@ -18,7 +18,7 @@ function App() {
   const numberList = "1234567890";
   const symbolChars = '!@#$%^&*()_+-={}[];:"|,.<>?';
 
-  const [password, setPassword] = useState("Password");
+  const [password, setPassword] = useState("");
 
   const [includeUppercase, setUppercase] = useState(false);
   const [includeLowercase, setLower] = useState(false);
@@ -84,6 +84,7 @@ function App() {
 
   function generatePassword() {
     let charachterList = "";
+    let newPassword = "";
     if (includeUppercase) {
       charachterList += uppercase;
     }
@@ -97,25 +98,16 @@ function App() {
       charachterList += symbolChars;
     }
 
-    let newPassword = "";
     for (let i = 0; i < value; i++) {
       const randomIndex = Math.floor(Math.random() * charachterList.length);
       newPassword += charachterList[randomIndex];
     }
-    setPassword(newPassword);
-    return newPassword;
-  }
-  function handleGeneratePassword() {
-    const newPassword = generatePassword(
-      value,
-      uppercase,
-      lowercase,
-      number,
-      symbolChars,
-      generateLevel
-    );
-  }
 
+    if (generateLevel()) {
+      setPassword(newPassword);
+    }
+  }
+  console.log(password);
   return (
     <>
       <div className="container">
